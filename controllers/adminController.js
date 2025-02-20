@@ -16,7 +16,7 @@ exports.getLoginPage = (req, res) => {
 
 exports.loginAdmin = (req, res) => {
     let { email, password } = req.body;
-    let mail = "hillary@gmail.com.com";
+    let mail = "hillary@gmail.com";
     let hashed_pass = "$2b$10$MmYRPyzFDEUjaEp1iYSdveyvR.v1n.jfoS6qSDQHx3GUEVWs4x8z6";
 
     if (email === mail && bcrypt.compareSync(password, hashed_pass)) {
