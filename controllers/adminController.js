@@ -17,7 +17,7 @@ exports.getLoginPage = (req, res) => {
 exports.loginAdmin = (req, res) => {
     let { email, password } = req.body;
     let mail = "hillary@gmail.com";
-    let hashed_pass = "$2a$10$ywLT3PA0OdRiRawA9oEsmOzuKsQ8pTexVyuqXWGfiMLX1FqT4zX0u";
+    let hashed_pass = "$2a$10$ciLhWAEmpj.rNC9piM1gousPrST1pKJVmThqcSHucOAWQONZ/uoG6";
 
     if (email === mail && bcrypt.compareSync(password, hashed_pass)) {
         req.session.isAdmin = true;
