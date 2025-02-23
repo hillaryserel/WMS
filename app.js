@@ -18,6 +18,11 @@ app.use(cookieParser());
 
 app.use("/", indexRoutes);
 
+app.get("/contact", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/views/common/forms/contactUs.html"));
+});
+
+
 app.get("*", (req, res) => {
     res.render("404.ejs");
 })
