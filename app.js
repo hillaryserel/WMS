@@ -28,8 +28,6 @@ app.post("/send-message", (req, res) => {
   if (!name || !email || !message) {
       return res.status(400).send("All fields are required.");
   }
-
-  console.log("New message received:", { name, email, message });
   
   // TODO: Add logic to store the message in a database or send an email
 
