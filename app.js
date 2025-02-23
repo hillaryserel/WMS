@@ -19,6 +19,15 @@ app.use(cookieParser());
 
 app.use("/", indexRoutes);
 
+// Configure Nodemailer Transporter
+const transporter = nodemailer.createTransport({
+  service: "gmail", // or use another provider like Outlook, Yahoo, etc.
+  auth: {
+      user: process.env.EMAIL_USER, // Your email address (store in .env)
+      pass: process.env.EMAIL_PASS, // Your email password or app password
+  },
+});
+
 app.get("/contact", (req, res) => {
   res.render(path.join(__dirname, "public/views/common/forms/contactUs"));
 });
