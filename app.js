@@ -32,7 +32,10 @@ app.post("/send-message", (req, res) => {
   // TODO: Add logic to store the message in a database or send an email
 try{
   await trasporter.sendMail({
-    from:
+    from: "noreply@example.com",
+    to: "admin@example.com",
+    subject: "New Message from Contact Form",
+    text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
   })
 }
 
