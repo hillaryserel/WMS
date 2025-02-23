@@ -22,6 +22,19 @@ app.get("/contact", (req, res) => {
   res.render(path.join(__dirname, "public/views/common/forms/contactUs"));
 });
 
+app.post("/send-message", (req, res) => {
+  const { name, email, message } = req.body;
+
+  if (!name || !email || !message) {
+      return res.status(400).send("All fields are required.");
+  }
+
+  console.log("New message received:", { name, email, message });
+  
+  // TODO: Add logic to store the message in a database or send an email
+
+  res.send("Message sent successfully!");
+});
 
 app.get("*", (req, res) => {
     res.render("404.ejs");
