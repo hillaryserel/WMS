@@ -29,7 +29,7 @@ const transporter = nodemailer.createTransport({
 });
 
 app.get("/contact", (req, res) => {
-  res.render(path.join(__dirname, "public/views/common/forms/contactUs"));
+  res.render("common/forms/contactUs");
 });
 
 app.post("/send-message", async(req, res) => {
