@@ -3,7 +3,7 @@ const router = express.Router();
 const driverController = require("../controllers/driverController");
 const driverAuthMiddleware = require("../middleware/driverAuthMiddleware");
 
-
+// Driver login and dashboard routes
 router.get("/", driverController.getDriverLogin);
 router.post("/login_process", driverController.loginDriver);
 router.get("/dashboard", driverAuthMiddleware.isDriverLoggedIn, driverController.getDriverDashboard);
