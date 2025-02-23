@@ -30,6 +30,11 @@ app.post("/send-message", (req, res) => {
   }
   
   // TODO: Add logic to store the message in a database or send an email
+try{
+  await trasporter.sendMail({
+    from:
+  })
+}
 
   res.send("Message sent successfully!");
 });
