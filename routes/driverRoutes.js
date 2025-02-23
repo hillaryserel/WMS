@@ -8,12 +8,6 @@ router.get("/", driverController.getDriverLogin);
 router.post("/login_process", driverController.loginDriver);
 router.get("/dashboard", driverAuthMiddleware.isDriverLoggedIn, driverController.getDriverDashboard);
 
-// Password reset routes
-
-router.post("/forgot-password", driverController.forgotPassword); // Request password reset
-router.get("/reset-password/:token", driverController.getResetPasswordForm); // Show reset form
-router.post("/reset-password", driverController.resetPassword); // Handle password reset
-
 // Driver request routes
 router.get("/pending-requests", driverAuthMiddleware.isDriverLoggedIn, driverController.getPendingRequests);
 router.get("/resolve-request", driverAuthMiddleware.isDriverLoggedIn, driverController.resolveRequest);
