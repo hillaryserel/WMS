@@ -11,6 +11,7 @@ router.get("/dashboard", driverAuthMiddleware.isDriverLoggedIn, driverController
 // Password reset routes
 
 router.post("/forgot-password", driverController.forgotPassword); // Request password reset
+router.get("/reset-password/:token", driverController.getResetPasswordForm); // Show reset form
 
 // Driver request routes
 router.get("/pending-requests", driverAuthMiddleware.isDriverLoggedIn, driverController.getPendingRequests);
