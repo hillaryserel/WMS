@@ -1,4 +1,5 @@
 const express = require("express");
+const nodemailer = require("nodemailer");
 const app = express();
 const path = require("path");
 const ejs = require("ejs");
