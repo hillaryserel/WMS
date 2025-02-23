@@ -35,11 +35,13 @@ try{
     from: `"${name}" <${email}>`,
     to: process.env.EMAIL_USER,
     subject: "New Contact Us Message",
-    text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
+    text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
   });
-}
-
   res.send("Message sent successfully!");
+} catch (error) {
+    console.error("Email error:", error);
+    res.status(500).send("Error sending email.");
+}
 });
 
 app.get("*", (req, res) => {
