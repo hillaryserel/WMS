@@ -32,7 +32,7 @@ app.get("/contact", (req, res) => {
   res.render(path.join(__dirname, "public/views/common/forms/contactUs"));
 });
 
-app.post("/send-message", (req, res) => {
+app.post("/send-message", async(req, res) => {
   const { name, email, message } = req.body;
 
   if (!name || !email || !message) {
