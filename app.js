@@ -41,7 +41,7 @@ app.post("/send-message", (req, res) => {
   
   // TODO: Add logic to store the message in a database or send an email
 try{
-  await trasporter.sendMail({
+  await transporter.sendMail({
     from: `"${name}" <${email}>`,
     to: process.env.EMAIL_USER,
     subject: "New Contact Us Message",
