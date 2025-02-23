@@ -21,7 +21,7 @@ app.use("/", indexRoutes);
 
 // Configure Nodemailer Transporter
 const transporter = nodemailer.createTransport({
-  service: "gmail", // or use another provider like Outlook, Yahoo, etc.
+  service: "gmail", 
   auth: {
       user: process.env.EMAIL_USER, // Your email address (store in .env)
       pass: process.env.EMAIL_PASS, // Your email password or app password
