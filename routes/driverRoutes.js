@@ -8,7 +8,7 @@ router.get("/", driverController.getDriverLogin);
 router.post("/login_process", driverController.loginDriver);
 router.get("/dashboard", driverAuthMiddleware.isDriverLoggedIn, driverController.getDriverDashboard);
 
-
+// Driver request routes
 router.get("/pending-requests", driverAuthMiddleware.isDriverLoggedIn, driverController.getPendingRequests);
 router.get("/resolve-request", driverAuthMiddleware.isDriverLoggedIn, driverController.resolveRequest);
 router.get("/reject-request", driverAuthMiddleware.isDriverLoggedIn, driverController.rejectRequest);
