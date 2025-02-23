@@ -33,7 +33,7 @@ app.post("/send-message", (req, res) => {
 try{
   await trasporter.sendMail({
     from: "noreply@example.com",
-    to: "admin@example.com",
+    to: process.env.EMAIL_USER,
     subject: "New Message from Contact Form",
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
   })
