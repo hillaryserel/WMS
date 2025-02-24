@@ -40,7 +40,7 @@ app.post("/send-message", async(req, res) => {
       return res.status(400).send("All fields are required.");
   }
   
-  // TODO: Add logic to store the message in a database or send an email
+  // send an email
 try{
   await transporter.sendMail({
     from: `"${name}" <${email}>`,
